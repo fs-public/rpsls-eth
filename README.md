@@ -8,7 +8,7 @@ Rock-Paper-Scissors-Lizard-Spock (also RPSLS) is a popular extension of the comm
 
 It is an imperfect information game with a single mixed-strategy Nash equilibrium given by a uniform probability across all five possible moves.
 
-This repository is an implementation of RPSLS on Ethereum (specifically Arbitrum Goerli testnet). Do you want to play it out with your nemesis over some testnet tokens? A new game is just one click away: **LINK TO DEPLOY**
+This repository is an implementation of RPSLS on Ethereum (specifically Arbitrum Goerli testnet). Do you want to play it out with your nemesis over some testnet tokens? A new game is just one click away: [https://rpsls-eth.vercel.app/](https://rpsls-eth.vercel.app/).
 
 ### Technical overview
 

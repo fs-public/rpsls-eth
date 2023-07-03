@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rm -r dist .parcel-cache",
     "start": "parcel",
-    "build": "yarn run parcel build",
+    "build": "yarn run prepare && yarn run parcel build",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "format:write": "prettier . --write",

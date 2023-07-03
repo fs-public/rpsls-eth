@@ -11,6 +11,9 @@
 # env
 .env
 
+# generated hooks as they have timestamp
+src/hooks/contracts/generated*
+
 # production
 /build
 /dist

@@ -1,2 +1,3 @@
 .cache
-.artifacts/build-info
+artifacts/build-info
+artifacts/src/contracts/RPS.sol/*.dbg.json
