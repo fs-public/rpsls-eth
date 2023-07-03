@@ -1,0 +1,5 @@
+dist
+contracts
+node_modules
+.parcel-cache
+src/hooks/contracts/*
