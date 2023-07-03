@@ -47,7 +47,9 @@ const GameSetupSection: React.FC<{ contract?: `0x${string}` }> = ({ contract }) 
         &nbsp; vs &nbsp;
         <BlockExplorerLink hex={j2} />
         {playerRole === PlayerRole.PLAYER2 && <span className="highlight"> (that&apos;s you!)</span>}
-        {playerRole === PlayerRole.OBSERVER && <span className="highlight"> (you&apos;re observing)</span>}
+        {(playerRole === PlayerRole.OBSERVER || playerRole === PlayerRole.UNKNOWN) && (
+          <span className="highlight"> (you&apos;re observing)</span>
+        )}
       </p>
       <p>
         Remaining wager of {stake !== undefined ? formatEther(stake * (c2 ? BigInt(2) : BigInt(1))) : "..."}

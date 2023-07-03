@@ -43,6 +43,7 @@ const StyledGameAddress = styled.div`
 const PastGames: React.FC = () => {
   const pastGames = usePastGames((state) => state.games);
   const publicClient = usePublicClient();
+  const [refetchCounter, setRefetchCounter] = useState(0);
 
   const [displayGames, setDisplayGames] = useState<{ address: `0x${string}`; stake: string; activeBefore: number }[]>(
     []
@@ -71,7 +72,10 @@ const PastGames: React.FC = () => {
 
       setDisplayGames(newDisplay);
     })();
-  }, [pastGames, publicClient]);
+
+    const timeout = setTimeout(() => setRefetchCounter((c) => c + 1), 10000);
+    return () => clearTimeout(timeout);
+  }, [refetchCounter, pastGames, publicClient]);
 
   return (
     <Container>

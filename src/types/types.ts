@@ -3,8 +3,8 @@ export enum GameMove {
   ROCK,
   PAPER,
   SCISSORS,
-  LIZARD,
   SPOCK,
+  LIZARD,
 }
 
 export enum PlayerRole {
