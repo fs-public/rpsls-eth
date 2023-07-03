@@ -69,7 +69,7 @@ const Player1RevealSection: React.FC<{ contract?: `0x${string}` }> = ({ contract
             <StyledRow>
               <StyledSimpleRow>
                 <Icon icon="ph:warning-bold" style={{ width: "16px", color: "red" }} />
-                Your secret was not found or mismatches. Try inputting it again:
+                Your secret was not found or mismatches. Try inputting password again:
               </StyledSimpleRow>
             </StyledRow>
             <StyledRow>
@@ -98,7 +98,10 @@ const Player1RevealSection: React.FC<{ contract?: `0x${string}` }> = ({ contract
   // observer in this section
   return (
     <StyledRow>
-      <p>Both players made their move. Waiting for player 1 to reveal his move and distribute ETH.</p>
+      <p>
+        Both players made their move.
+        {stake !== undefined && stake > 0 ? " Waiting for player 1 to reveal his move and distribute ETH." : ""}
+      </p>
       {stake !== undefined && stake > 0 && (
         <TimeoutButton
           timeLeft={timeLeft}

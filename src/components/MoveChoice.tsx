@@ -7,7 +7,7 @@ import Lizard from "src/assets/lizard.png";
 import Spock from "src/assets/spock.png";
 import { GameMove } from "src/types/types";
 
-const images = [null, Rock, Paper, Scissors, Lizard, Spock];
+const images = [null, Rock, Paper, Scissors, Spock, Lizard];
 
 export enum MoveStatus {
   NONE,
@@ -44,21 +44,8 @@ const getStatusWithMove = (selected: GameMove, against: GameMove) => {
   if (selected === 0) return MoveStatus.DEFAULT;
   if (selected === against) return MoveStatus.SELECTED;
 
-  const remap = (a: GameMove) => {
-    if (a === 4)
-      // lizard
-      return 5;
-    else if (a === 5)
-      // spock
-      return 4;
-    else return a;
-  };
-
-  const c1 = remap(selected);
-  const c2 = remap(against);
-
-  if (c1 % 2 === c2 % 2) return c1 < c2 ? MoveStatus.WINS : MoveStatus.LOSES;
-  else return c1 > c2 ? MoveStatus.WINS : MoveStatus.LOSES;
+  if (selected % 2 === against % 2) return selected < against ? MoveStatus.WINS : MoveStatus.LOSES;
+  else return selected > against ? MoveStatus.WINS : MoveStatus.LOSES;
 };
 
 interface MoveChoiceProps {
@@ -74,7 +61,7 @@ const MoveChoice: React.FC<MoveChoiceProps> = ({ selected, onSelect }) => {
 
   return (
     <Container>
-      {[1, 2, 3, 4, 5].map((i) => (
+      {[1, 2, 3, 5, 4].map((i) => (
         <StyledMove key={i} $move={i} $status={getStatusWithMove(selected, i)} onClick={() => selectMove(i)} />
       ))}
     </Container>

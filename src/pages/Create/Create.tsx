@@ -46,7 +46,13 @@ const Create: React.FC = () => {
   const { createGame } = useCreateGame();
   const { getMessageForSigning, signMessage } = useGameSalt();
 
-  const writeToClipboard = useToastedClipboard(["Your game password was saved to your clipboard."]);
+  const writeToClipboard = useToastedClipboard([
+    "Your game password was saved to your clipboard. Save it, don't share.",
+  ]);
+
+  const onSelectMove = (newMove: GameMove) => {
+    if (!isSubmitting) setSelectedMove(newMove);
+  };
 
   const { address } = useAccount();
   const { data: balance } = useBalance({ address });
@@ -143,7 +149,7 @@ const Create: React.FC = () => {
           })}
           error={errors.wager}
         />
-        <MoveChoice selected={selectedMove} onSelect={setSelectedMove} />
+        <MoveChoice selected={selectedMove} onSelect={onSelectMove} />
         <WalletFallback>
           <Button
             onClick={handleSubmit(onCreateGame)}
