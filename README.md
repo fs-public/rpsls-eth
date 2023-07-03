@@ -44,6 +44,7 @@ Nice to have refactors:
 - Use multicalls in `useGame.tsx` and `PastGames.tsx`, as well as wagmi's `usePrepareContractWrite`s elsewhere.
 - Null/non-null assertions, as well as isAdressEqual assertions, are all around the place. Would be nice to consolidate, and possibly extract into utils to enforce this.
 - Add more explanations to the frontend, possibly a dedicated route to the page. Add a modal to password generation.
+- Some very recent version of Parcel, wagmi or similar breaks babel-parcel-wagmi-web3modal connection and throws errors on connect wallet (see e.g. [here](https://github.com/wagmi-dev/wagmi/discussions/2266)). Fixed dependencies versions temporarily.
 
 #### Credits
 
