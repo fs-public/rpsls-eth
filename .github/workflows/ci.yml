@@ -21,6 +21,16 @@ jobs:
       - run: yarn install
       - run: yarn run prepare
       - run: yarn run lint
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - run: yarn install
+      - run: yarn run prepare
+      - run: yarn run typecheck
   build:
     runs-on: ubuntu-latest
     steps:
