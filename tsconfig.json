@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "sourceMap": false,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": [
+      "es6",
+      "dom",
+      "esnext.asynciterable",
+      "es2017"
+    ],
+    "module": "ESNext",
+    "target": "es2020",
+    "outDir": "build/dist",
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+    "isolatedModules": true,
+    "paths": {
+      "src*": [
+        "./src*"
+      ]
+    }
+  },
+  "files": [
+    "./global.d.ts"
+  ],
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "webpack",
+    "dist",
+    ".parcel-cache",
+    ".yarn"
+  ]
+}
